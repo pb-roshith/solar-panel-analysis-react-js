@@ -1,0 +1,94 @@
+.preloader {
+	padding: 3rem;
+	animation: tiltSpin 140s linear infinite;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	box-shadow: 0px 0px 400px 20px rgba(0, 0, 255, 0.5);
+	border-style: dotted;
+	border-color: rgba(0, 80, 250, 0.4);
+	border-width: 1px;
+	border-radius: 100%;
+	outline: dotted #37acd1 1px;
+}
+
+.king{
+    background: #0a0a0a;
+	color: #3ca5ff;
+	font: 1.4em sans-serif;
+	text-rendering: optimizeSpeed;
+	perspective: 20em;
+}
+
+.king,
+.preloader {
+	display: flex;
+
+}
+
+.preloader,
+.preloader__ring {
+	transform-style: preserve-3d;
+}
+.preloader__ring {
+	animation-name: spin;
+	animation-duration: 120s;
+	animation-timing-function: inherit;
+	animation-iteration-count: inherit;
+	position: relative;
+	font-size: 1em;
+}
+.preloader__ring:nth-child(even) {
+	animation-direction: reverse;
+}
+.preloader__sector {
+	font-weight: 800;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: left;
+	box-shadow: 20px 0px 100px 1px rgba(0, 0, 255, 0.9);
+	content: "";
+}
+.preloader__sector:nth-child(1) {
+	transform: rotateY(-51.4285714286deg) translateZ(2rem);
+}
+.preloader__sector:nth-child(2) {
+	transform: rotateY(0deg) translateZ(6rem);
+}
+.preloader__sector:nth-child(3) {
+	transform: rotateY(51.4285714286deg) translateZ(6rem);
+}
+.preloader__sector:nth-child(4) {
+	transform: rotateY(102.8571428571deg) translateZ(4rem);
+}
+.preloader__sector:nth-child(5) {
+	transform: rotateY(154.2857142857deg) translateZ(4rem);
+}
+.preloader__sector:nth-child(6) {
+	transform: rotateY(205.7142857143deg) translateZ(6rem);
+}
+.preloader__sector:nth-child(7) {
+	transform: rotateY(257.1428571429deg) translateZ(4rem);
+}
+
+/* Animations */
+@keyframes tiltSpin {
+	from {
+		transform: rotateY(100turn) rotateX(80turn);
+	}
+	to {
+		transform: rotateY(60deg) rotateX(45deg);
+	}
+}
+@keyframes spin {
+	from {
+		transform: rotateY(0turn);
+		transform: rotateX(10turn);
+	}
+	to {
+		transform: rotateY(100turn);
+		transform: rotateX(0turn);
+	}
+}

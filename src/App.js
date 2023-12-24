@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from "react-router-dom";
+import Rootlayout from './layout/rootlayout';
+import Home from './components/home.jsx';
+import Dashboard from './components/dashboard.jsx';
+import NearSolar from './components/nearSolar.jsx';
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<Rootlayout/>}>
+      <Route index element={<Home/>}></Route>
+      <Route path='nearSolar' element={<NearSolar/>}></Route>
+      <Route path='dashboard/:id' element={<Dashboard/>}></Route>
+    </Route>
+  )
+)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <RouterProvider router={router}></RouterProvider>
+    </>
   );
 }
 
