@@ -45,8 +45,8 @@ const Footer = () => {
                                 </div>
                                 <div>
                                     <ul style={{listStyle:'none'}}>
-                                        <li>roshithindia@gmail.com</li>
-                                        <li>sit21ad029@sairamtap.edu.in</li>
+                                        <li>solaranalysis@gmail.com</li>
+                                        <li>solar@outlook.com</li>
                                     </ul>   
                                 </div>
                             </div>
